@@ -14,7 +14,14 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Show files
+        shell: cmd
+        run: |
+          echo === FILES ===
+          dir /s /b
+
       - name: Compile C++
+        shell: cmd
         run: |
           g++ main.cpp -o program.exe
 
